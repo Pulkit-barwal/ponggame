@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ping Pong Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7b21ad7a06.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>PONG GAME</h1>
+    <!-- Trigger/Open The Modal -->
+<button id="myBtn">HOW TO PLAY</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal-htp">
+
+  <!-- Modal content -->
+  <div class="modal-content-htp">
+    <span class="close-htp">&times;</span>
+    <div id='htp-title'>HOW TO PLAY</div>
+    <div id='htp-content'>
+        <div id='objective'>OBJECTIVE :
+            <div id='obj-content'>Stop the Ball from hitting the wall with help of paddle</div>
+        </div>
+        <div id='modes'>GAME MODES :
+            <div>
+                <ul id='modes-content'>
+                    <li>Single Player</li>
+                    <li>Two Players</li>
+                </ul>
+            </div>
+        </div>
+        <div id='controls'>CONTROLS :
+            <table id='ctrl-table'>
+                <tr>
+                    <th>Single Player</th>
+                    <th>Two Players</th>
+                </tr>
+                <tr>
+                    <td>Use mouse to move the paddle UP & DOWN within th ping pong table area</td>
+                    <td>For LEFT Player use MOUSE & for RIGHT Player use KEYBOARD:<br>
+                        "UP" key for moving up<br>
+                        "DOWN" key for moving down
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id='instructions'><ul>
+            <li>First to score 10 points WINS!</li>
+            <li>Press RESET to restart the game.</li>
+        </ul></div>
+    </div>
+    <div id='htp-enjoy'>ENJOY PLAYING!</div>
+  </div>
+
+</div>
+    
+   <canvas id="pong" width="600" height="400"></canvas>
+   <div class="modal">
+         <div class="modal-content">
+         </div>
+     </div>
+   <div class="toggle">
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label for="checkbox" class="label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </label>
+</div>
+<div class="buttons">    
+    <div class="player2 btn">2 PLAYERS
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="reset btn">RESET
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    
+    <div class="comp btn">COMP
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+   <script src="pong.js"></script>
+</body>
+</html>

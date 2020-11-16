@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #37474f;
+}
+
+body.light {
+  background: #dbedf3;
+}
+
+h1 {
+  position: absolute;
+  left: 28%;
+  top: 8%;
+  font-size: 65px;
+  font-family: "Press Start 2P", cursive;
+  color: hotpink;
+  letter-spacing: 1px;
+  animation: colorRotate 4s linear 0s infinite;
+}
+
+a {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+a:hover {
+  color: yellow;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translate(27px);
+}
+
+.label {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 26px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.ball {
+  left: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  transition: transform 0.2s linear;
+}
+
+.fa-moon {
+  position: relative;
+  left: 30px;
+  color: #f1c40f;
+}
+
+.fa-sun {
+  position: relative;
+  right: 30px;
+  color: #0e0d0d;
+}
+
+.toggle {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  width: 20px;
+  height: 20px;
+}
+
+body.light.label {
+  background-color: red;
+}
+
+#pong {
+  border: 2px solid #fff;
+  position: absolute;
+  margin: auto;
+  margin-top: 150px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-color: #9bcffa;
+  box-shadow: 0 0 15px #9ecaed;
+}
+
+.buttons {
+  display: flex;
+  width: 610px;
+  position: relative;
+  margin: auto;
+  margin-top: 500px;
+  justify-content: space-between;
+}
+
+.btn {
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+  height: 50px;
+  width: 180px;
+  color: #222831;
+  background-color: #839b97;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.btn:hover {
+  background: #2894ff;
+  color: #1f242d;
+  transition: 1s;
+  transition-delay: 1s;
+  cursor: pointer;
+}
+
+.btn span {
+  position: absolute;
+  display: block;
+  background: #2894ff;
+}
+.btn span:nth-child(1) {
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s;
+}
+.btn:hover span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.25s;
+}
+
+.btn span:nth-child(2) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s;
+  transition-delay: 0.25s;
+}
+.btn:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.25s;
+  transition-delay: 0.25s;
+}
+
+.btn span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.25s;
+  transition-delay: 0.5s;
+}
+.btn:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.25s;
+  transition-delay: 0.5s;
+}
+
+.btn span:nth-child(4) {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+  transition-delay: 0.75s;
+}
+.btn:hover span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.25s;
+  transition-delay: 0.75s;
+}
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  font-family: 'Press Start 2P' , cursive;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 15px;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* Modal for HOW TO PLAY*/
+
+/* (background) */
+.modal-htp {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* The Close Button */
+.close-htp {
+  color: rgb(255, 255, 255);
+  float: right;
+  margin-right: 10px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Modal Content/Box */
+.modal-content-htp{
+  background-color: #f5b69f;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 8% auto;
+  width: 15cm;
+}
+.close-htp:hover,
+.close-htp:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#ctrl-table{
+  border: #f87a48 dashed;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#htp-title{
+  font-family: 'Press Start 2P';
+  background-color:#f87c4f ;
+  padding: 10px;
+  text-align: center;
+  color: #a80404;
+  font-size: larger;
+  border-radius: 10px;
+}
+#objective,#modes,#controls,#htp-enjoy{
+  font-family: 'Press Start 2P';
+  margin-top: 10px;
+  color: #a80404;
+}
+#obj-content,#modes-content,#ctrl-table,#instructions{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #741313;
+}
+th{
+  font-family:'Press Start 2P', cursive;
+  font-size: small;
+  color: #61170e;
+  padding: 10px;
+  border-bottom: #f87a48 dashed 3px;
+  background-color:#fcac8f ;
+  border-radius: 10px;
+}
+td{
+  margin: 2px;
+  padding: 3px;
+  border:  #f87a48 dashed 3px;
+  border-radius: 10px;
+}
+#instructions{
+  margin-top: 10px;
+}
+
+#htp-enjoy{
+  text-align: center;
+  font-size: larger;
+  background-color: #f5a88c;
+  padding: 8px;
+  width: auto;
+  border-radius: 10px;
+
+}
+#myBtn{
+  font-family: 'Press Start 2P';
+  background-color: transparent;
+  color: red;
+  border: rgb(243, 18, 18) dashed 3px;
+  padding: 5px;
+  font-size: large;
+  margin: 20px;
+  cursor: pointer;
+}
+#myBtn:hover{
+  border-color: rgb(255, 255, 255);
+}
